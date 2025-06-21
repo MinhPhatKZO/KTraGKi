@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_card"
+    >
+
+    <!-- Khung nội dung chính -->
+    <LinearLayout
+        android:id="@+id/loginContainer"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:background="#FFFFFF"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Logo App -->
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Foody App"
+            android:textColor="#E53935"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Logo hình ảnh -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_logo" />
+
+        <!-- Tài khoản -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_user" />
+
+                <EditText
+                    android:id="@+id/edtUsername_MinhPhat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Tên đăng nhập"
+                    android:inputType="textPersonName"
+                    android:paddingBottom="4dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#AAAAAA" />
+            </LinearLayout>
+
+            <!-- Gạch đỏ -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="#E53935" />
+        </LinearLayout>
+
+        <!-- Mật khẩu -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_pass" />
+
+                <EditText
+                    android:id="@+id/edtPassword_MinhPhat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingBottom="4dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#AAAAAA" />
+            </LinearLayout>
+
+            <!-- Gạch đỏ -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="#E53935" />
+        </LinearLayout>
+
+        <!-- Nút đăng nhập -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin_MinhPhat"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corners"
+            android:text="ĐĂNG NHẬP"
+            android:textColor="#FDD835"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtLogout_MinhPhat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/Logout_text"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MyFood_NguyenMinhPhat</string>
+    <string name="Logout_text">Bạn chưa có tài khoản? <font color="#800080"><b>Đăng ký</b></font></string>
+    <string name="Login_text"><font color="#800080">Bạn đã có tài khoản?</font> <font color="#0000F5"><b>Đăng nhập ngay</b></font></string>
+
+</resources>

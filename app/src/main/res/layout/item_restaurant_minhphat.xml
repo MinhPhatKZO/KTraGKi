@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:background="#8E24AA"
+    android:padding="8dp"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/imgRestaurant"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_restaurant"
+        android:background="@drawable/bg_round_image"
+        android:contentDescription="Ảnh quán"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="8dp">
+
+        <TextView
+            android:id="@+id/tvRestaurantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quán bánh mì cô Ba"
+            android:textColor="#FFF176"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvRestaurantAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ quán"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:layout_marginBottom="4dp"/>
+
+        <Button
+            android:id="@+id/btnSaveInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#D81B60"
+            android:text="LƯU THÔNG TIN"
+            android:textAllCaps="true"
+            android:textColor="#8E24AA"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>
