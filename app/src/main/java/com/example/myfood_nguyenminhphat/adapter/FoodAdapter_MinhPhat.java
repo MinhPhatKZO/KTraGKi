@@ -1,3 +1,6 @@
+// ===============================
+// FoodAdapter_MinhPhat.java (Đồng bộ layout + tên id item_food_minhphat.xml)
+// ===============================
 package com.example.myfood_nguyenminhphat.adapter;
 
 import android.content.Context;
@@ -5,6 +8,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,7 +41,10 @@ public class FoodAdapter_MinhPhat extends RecyclerView.Adapter<FoodAdapter_MinhP
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
         Food_MinhPhat food = list.get(position);
         holder.txtName.setText(food.getName());
-        holder.txtDesc.setText(food.getDescription());
+        holder.txtType.setText("Size S");
+        holder.txtPrice.setText("10000 VNĐ");
+        holder.txtRestaurant.setText("Quán bánh mì cô Ba"); // hoặc lấy từ DAO nếu có
+        holder.imgFood.setImageResource(R.drawable.ic_restaurant); // hoặc food.getImage() nếu có logic load ảnh
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, FoodDetailActivity_MinhPhat.class);
@@ -52,12 +59,16 @@ public class FoodAdapter_MinhPhat extends RecyclerView.Adapter<FoodAdapter_MinhP
     }
 
     public static class FoodViewHolder extends RecyclerView.ViewHolder {
-        TextView txtName, txtDesc;
+        TextView txtName, txtType, txtPrice, txtRestaurant;
+        ImageView imgFood;
 
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtName = itemView.findViewById(R.id.txtFoodName_MinhPhat);
-            txtDesc = itemView.findViewById(R.id.txtFoodDesc_MinhPhat);
+            imgFood = itemView.findViewById(R.id.imgFoodDetail_MinhPhat);
+            txtName = itemView.findViewById(R.id.txtFoodNameDetail_MinhPhat);
+            txtType = itemView.findViewById(R.id.txtFoodTypeDetail_MinhPhat);
+            txtPrice = itemView.findViewById(R.id.txtFoodDescDetail_MinhPhat);
+            txtRestaurant = itemView.findViewById(R.id.txtRestaurantDetail_MinhPhat);
         }
     }
 }

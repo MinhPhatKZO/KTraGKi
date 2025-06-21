@@ -1,20 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:padding="12dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#8E24AA"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    android:gravity="center_vertical"
+    android:backgroundTintMode="src_in"
+    android:clipToPadding="false"
+    android:elevation="4dp"
+    android:backgroundTint="#8E24AA">
 
-    <TextView
-        android:id="@+id/txtFoodName_MinhPhat"
-        android:text="Tên món"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/imgFoodDetail_MinhPhat"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_restaurant" />
 
-    <TextView
-        android:id="@+id/txtFoodDesc_MinhPhat"
-        android:text="Mô tả món"
-        android:textSize="14sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtFoodNameDetail_MinhPhat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bánh mì bò kho"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtFoodTypeDetail_MinhPhat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size S"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtFoodDescDetail_MinhPhat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10000 VNĐ"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtRestaurantDetail_MinhPhat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quán bánh mì cô Ba"
+            android:textColor="#D1C4E9"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
 </LinearLayout>
