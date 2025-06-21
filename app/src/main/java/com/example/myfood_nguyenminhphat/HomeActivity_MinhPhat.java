@@ -1,3 +1,6 @@
+// ===============================
+// HomeActivity_MinhPhat.java (Đã fix)
+// ===============================
 package com.example.myfood_nguyenminhphat;
 
 import android.content.Intent;
@@ -28,7 +31,6 @@ public class HomeActivity_MinhPhat extends AppCompatActivity {
     List<Food_MinhPhat> filteredList = new ArrayList<>();
     FoodDao_MinhPhat foodDao;
 
-    // Bottom navigation
     LinearLayout navHome, navFavorite, navCart, navUser;
 
     @Override
@@ -36,25 +38,28 @@ public class HomeActivity_MinhPhat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_minhphat);
 
-        // Ánh xạ
         edtSearch = findViewById(R.id.edtSearch_MinhPhat);
         rcvFoodList = findViewById(R.id.rcvFoodList_MinhPhat);
-
         navHome = findViewById(R.id.nav_home_minhphat);
         navFavorite = findViewById(R.id.nav_favorite_minhphat);
         navCart = findViewById(R.id.nav_cart_minhphat);
         navUser = findViewById(R.id.nav_user_minhphat);
 
-        // Load món ăn
         foodDao = new FoodDao_MinhPhat(this);
-        allFoodList = foodDao.getAllFood_MinhPhat();
-        filteredList.addAll(allFoodList);
+        try {
+            allFoodList = foodDao.getAllFood_MinhPhat();
+            if (allFoodList != null) {
+                filteredList.addAll(allFoodList);
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Lỗi load món ăn: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
 
         adapter = new FoodAdapter_MinhPhat(this, filteredList);
         rcvFoodList.setLayoutManager(new LinearLayoutManager(this));
         rcvFoodList.setAdapter(adapter);
 
-        // Tìm kiếm món ăn
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override public void afterTextChanged(Editable s) {}
@@ -65,22 +70,20 @@ public class HomeActivity_MinhPhat extends AppCompatActivity {
             }
         });
 
-        // Xử lý bottom nav
-        navHome.setOnClickListener(v -> {
-            Toast.makeText(this, "Bạn đang ở trang chủ", Toast.LENGTH_SHORT).show();
-        });
+        navHome.setOnClickListener(v ->
+                Toast.makeText(this, "Bạn đang ở trang chủ", Toast.LENGTH_SHORT).show()
+        );
 
-        navFavorite.setOnClickListener(v -> {
-            Toast.makeText(this, "Chức năng Yêu thích đang phát triển", Toast.LENGTH_SHORT).show();
-        });
+        navFavorite.setOnClickListener(v ->
+                Toast.makeText(this, "Chức năng Yêu thích đang phát triển", Toast.LENGTH_SHORT).show()
+        );
 
-        navCart.setOnClickListener(v -> {
-            Toast.makeText(this, "Chức năng Giỏ hàng đang phát triển", Toast.LENGTH_SHORT).show();
-            // startActivity(new Intent(this, CartActivity_MinhPhat.class));
-        });
+        navCart.setOnClickListener(v ->
+                Toast.makeText(this, "Chức năng Giỏ hàng đang phát triển", Toast.LENGTH_SHORT).show()
+        );
 
         navUser.setOnClickListener(v -> {
-            startActivity(new Intent(this, LogoutActivity_MinhPhat.class));
+            startActivity(new Intent(this, RegisterActivity_MinhPhat.class));
             finish();
         });
     }

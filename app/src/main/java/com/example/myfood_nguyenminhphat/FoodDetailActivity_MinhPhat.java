@@ -1,3 +1,6 @@
+// ===============================
+// FoodDetailActivity_MinhPhat.java (Hiển thị thông tin + nhà hàng)
+// ===============================
 package com.example.myfood_nguyenminhphat;
 
 import android.os.Bundle;
@@ -51,7 +54,6 @@ public class FoodDetailActivity_MinhPhat extends AppCompatActivity {
             Restaurant_MinhPhat res = resDao.getRestaurantById_MinhPhat(food.getResID());
             txtRestaurant.setText("Nhà hàng: " + (res != null ? res.getName() : "Không rõ"));
 
-            // Nếu có thư viện ảnh thì thêm: Glide.with(this).load(food.getImage()).into(imgFood);
         } else {
             Toast.makeText(this, "Không tìm thấy món ăn", Toast.LENGTH_SHORT).show();
             finish();

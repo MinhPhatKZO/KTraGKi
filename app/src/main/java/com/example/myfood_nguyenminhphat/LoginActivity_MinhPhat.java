@@ -51,7 +51,9 @@ public class LoginActivity_MinhPhat extends AppCompatActivity {
         });
 
         txtLogout.setOnClickListener(v -> {
-            Toast.makeText(this, "Bạn chưa có tài khoản. Liên hệ quản trị viên!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(LoginActivity_MinhPhat.this, RegisterActivity_MinhPhat.class);
+            startActivity(intent);
         });
+
     }
 }

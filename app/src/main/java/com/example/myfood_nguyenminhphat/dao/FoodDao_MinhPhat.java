@@ -1,3 +1,4 @@
+
 package com.example.myfood_nguyenminhphat.dao;
 
 import android.content.Context;
@@ -21,8 +22,9 @@ public class FoodDao_MinhPhat {
     public List<Food_MinhPhat> getAllFood_MinhPhat() {
         List<Food_MinhPhat> list = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM Food_MinhPhat", null);
-        if (cursor.moveToFirst()) {
+        Cursor cursor = db.rawQuery("SELECT * FROM Food_NguyenMinhPhat", null);
+
+        if (cursor != null && cursor.moveToFirst()) {
             do {
                 Food_MinhPhat food = new Food_MinhPhat();
                 food.setFoodID(cursor.getInt(0));
@@ -34,12 +36,14 @@ public class FoodDao_MinhPhat {
                 list.add(food);
             } while (cursor.moveToNext());
         }
-        cursor.close();
+
+        if (cursor != null) cursor.close();
         return list;
     }
+
     public Food_MinhPhat getFoodById_MinhPhat(int id) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM Food_MinhPhat WHERE FoodID=?", new String[]{String.valueOf(id)});
+        Cursor c = db.rawQuery("SELECT * FROM Food_NguyenMinhPhat WHERE FoodID=?", new String[]{String.valueOf(id)});
         if (c.moveToFirst()) {
             Food_MinhPhat f = new Food_MinhPhat();
             f.setFoodID(c.getInt(0));
@@ -51,7 +55,7 @@ public class FoodDao_MinhPhat {
             c.close();
             return f;
         }
+        if (c != null) c.close();
         return null;
     }
-
 }

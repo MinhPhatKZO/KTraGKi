@@ -10,8 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyFood_NguyenMinhPhat"
-        >
+        android:theme="@style/Theme.MyFood_NguyenMinhPhat">
 
         <!-- LoginActivity: Là màn hình khởi động -->
         <activity
@@ -23,15 +22,22 @@
             </intent-filter>
         </activity>
 
-        <!-- LogoutActivity: sau khi đăng nhập thành công -->
-        <activity
-            android:name=".LogoutActivity_MinhPhat"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity_MinhPhat"
-            android:exported="false" />
+
+        <!-- HomeActivity: sau khi đăng nhập -->
+        <activity android:name=".HomeActivity_MinhPhat" />
+
+
+        <!-- FoodListActivity -->
+        <activity android:name=".FoodListActivity_MinhPhat" />
+
+        <!-- FoodDetailActivity -->
+        <activity android:name=".FoodDetailActivity_MinhPhat" />
+
+        <!-- LogoutActivity -->
+        <activity android:name=".RegisterActivity_MinhPhat" />
+
+        <!-- MainActivity (nếu có dùng) -->
+        <activity android:name=".MainActivity_MinhPhat" />
 
     </application>
-
-
 </manifest>

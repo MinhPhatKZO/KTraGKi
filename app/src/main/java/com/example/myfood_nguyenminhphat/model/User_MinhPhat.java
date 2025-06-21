@@ -20,6 +20,11 @@ public class User_MinhPhat {
         this.username = username;
         this.password = password;
     }
+    // gọi username và password để đăng dang nhap sử dụng ở logout
+    public User_MinhPhat(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public int getUserID() { return userID; }
     public void setUserID(int userID) { this.userID = userID; }

@@ -2,12 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_card"
-    > <!-- Nền có hình ảnh -->
-
-    <!-- Nút Đăng ký -->
-
-        <!-- Chuyển sang login -->
+    android:background="@drawable/bg_card">
 
     <LinearLayout
         android:layout_width="311dp"
@@ -17,9 +12,9 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:background="#FFFFFF"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
+        android:background="#FFFFFF"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="24dp">
@@ -55,7 +50,7 @@
                     android:src="@drawable/ic_user" />
 
                 <EditText
-                    android:id="@+id/edtuser_minhphat"
+                    android:id="@+id/edtUsername_MinhPhat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -94,7 +89,7 @@
                     android:src="@drawable/ic_pass" />
 
                 <EditText
-                    android:id="@+id/edtpass_minhphat"
+                    android:id="@+id/edtPassword_MinhPhat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -133,7 +128,7 @@
                     android:src="@drawable/ic_pass" />
 
                 <EditText
-                    android:id="@+id/edtrepass_minhphat"
+                    android:id="@+id/edtRepassword_MinhPhat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -153,7 +148,7 @@
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/btnLogout_MinhPhat"
+            android:id="@+id/btnRegister_MinhPhat"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="end"
@@ -162,14 +157,13 @@
             android:src="@drawable/ic_logout_arow" />
 
         <TextView
-            android:id="@+id/txtLogout_MinhPhat"
+            android:id="@+id/txtLogin_MinhPhat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
             android:text="@string/Login_text"
             android:textColor="#000000"
             android:textSize="14sp" />
-
 
     </LinearLayout>
 
@@ -178,7 +172,5 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:orientation="horizontal">
-
-
     </LinearLayout>
 </RelativeLayout>
