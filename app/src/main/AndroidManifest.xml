@@ -28,7 +28,7 @@
 
 
         <!-- FoodListActivity -->
-        <activity android:name=".FoodListActivity_MinhPhat" />
+        <activity android:name=".RestaurantListActivity_MinhPhat" />
 
         <!-- FoodDetailActivity -->
         <activity android:name=".FoodDetailActivity_MinhPhat" />

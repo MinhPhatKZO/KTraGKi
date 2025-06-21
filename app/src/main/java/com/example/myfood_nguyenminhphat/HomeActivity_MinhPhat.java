@@ -1,5 +1,5 @@
 // ===============================
-// HomeActivity_MinhPhat.java (Đã fix)
+// HomeActivity_MinhPhat.java (Hoàn chỉnh hiển thị danh sách quán ăn)
 // ===============================
 package com.example.myfood_nguyenminhphat;
 
@@ -15,9 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myfood_nguyenminhphat.adapter.FoodAdapter_MinhPhat;
-import com.example.myfood_nguyenminhphat.dao.FoodDao_MinhPhat;
-import com.example.myfood_nguyenminhphat.model.Food_MinhPhat;
+import com.example.myfood_nguyenminhphat.adapter.RestaurantAdapter_MinhPhat;
+import com.example.myfood_nguyenminhphat.dao.RestaurantDao_MinhPhat;
+import com.example.myfood_nguyenminhphat.model.Restaurant_MinhPhat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,10 +26,10 @@ public class HomeActivity_MinhPhat extends AppCompatActivity {
 
     EditText edtSearch;
     RecyclerView rcvFoodList;
-    FoodAdapter_MinhPhat adapter;
-    List<Food_MinhPhat> allFoodList = new ArrayList<>();
-    List<Food_MinhPhat> filteredList = new ArrayList<>();
-    FoodDao_MinhPhat foodDao;
+    RestaurantAdapter_MinhPhat adapter;
+    List<Restaurant_MinhPhat> allRestaurantList = new ArrayList<>();
+    List<Restaurant_MinhPhat> filteredList = new ArrayList<>();
+    RestaurantDao_MinhPhat restaurantDao;
 
     LinearLayout navHome, navFavorite, navCart, navUser;
 
@@ -45,18 +45,18 @@ public class HomeActivity_MinhPhat extends AppCompatActivity {
         navCart = findViewById(R.id.nav_cart_minhphat);
         navUser = findViewById(R.id.nav_user_minhphat);
 
-        foodDao = new FoodDao_MinhPhat(this);
+        restaurantDao = new RestaurantDao_MinhPhat(this);
         try {
-            allFoodList = foodDao.getAllFood_MinhPhat();
-            if (allFoodList != null) {
-                filteredList.addAll(allFoodList);
+            allRestaurantList = restaurantDao.getAllRestaurants_MinhPhat();
+            if (allRestaurantList != null) {
+                filteredList.addAll(allRestaurantList);
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Lỗi load món ăn: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Lỗi load quán ăn: " + e.getMessage(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
 
-        adapter = new FoodAdapter_MinhPhat(this, filteredList);
+        adapter = new RestaurantAdapter_MinhPhat(this, filteredList);
         rcvFoodList.setLayoutManager(new LinearLayoutManager(this));
         rcvFoodList.setAdapter(adapter);
 
@@ -66,7 +66,7 @@ public class HomeActivity_MinhPhat extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                filterFoodList(s.toString());
+                filterRestaurantList(s.toString());
             }
         });
 
@@ -88,11 +88,11 @@ public class HomeActivity_MinhPhat extends AppCompatActivity {
         });
     }
 
-    private void filterFoodList(String keyword) {
+    private void filterRestaurantList(String keyword) {
         filteredList.clear();
-        for (Food_MinhPhat food : allFoodList) {
-            if (food.getName().toLowerCase().contains(keyword.toLowerCase())) {
-                filteredList.add(food);
+        for (Restaurant_MinhPhat res : allRestaurantList) {
+            if (res.getName().toLowerCase().contains(keyword.toLowerCase())) {
+                filteredList.add(res);
             }
         }
         adapter.notifyDataSetChanged();

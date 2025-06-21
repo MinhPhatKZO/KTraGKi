@@ -8,13 +8,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Danh sách món ăn"
+        android:text="Danh sách quán ăn"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="12dp" />
 
-    <ListView
-        android:id="@+id/lvFoods_MinhPhat"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRestaurants_MinhPhat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="1dp" />
